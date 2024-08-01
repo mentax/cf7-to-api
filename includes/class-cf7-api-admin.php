@@ -562,9 +562,9 @@ endif;
             
             // replace "[$form_key]" with json array of base64 strings
             $template = preg_replace( "/(\")?\[{$form_key}\](\")?/", json_encode($value), $template );
+         }else{
+            $template = str_replace( "[{$form_key}]", $value, $template );
           }
-
-          $template = str_replace( "[{$form_key}]", $value, $template );
         }
       }
 
